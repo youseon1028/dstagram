@@ -1,4 +1,4 @@
-#!c:\pycharmproject\dstagram\vnv_dj\scripts\python.exe
+#!C:\PycharmProject\dstagram\vnv_dj\Scripts\python.exe
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 
