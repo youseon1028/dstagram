@@ -165,3 +165,4 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage' # S3에 내용�
 DEFAULT_FILE_STORAGE = 'config.asset_storage.MediaStorage'
 
 STATIC_ROOT = [BASE_DIR / 'staticfiles'] # django 3.x
+

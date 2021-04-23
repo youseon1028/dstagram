@@ -4,10 +4,20 @@ from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-@login_required
-def photo_list(request):
-    photos = Photo.objects.all()
-    return render(request, 'photo/list.html', {'photos':photos})
+from django.views.generic.detail import DetailView
+from django.views.generic.list import ListView
+# from django.views import generic
+
+
+
+
+# @login_required
+class PhotoList(LoginRequiredMixin, ListView):
+    model = Photo
+    template_name = 'photo/list.html'
+    context_object_name = 'latest_photo_list'
+
+
 
 class PhotoUploadView(LoginRequiredMixin, CreateView):
     model = Photo
@@ -31,3 +41,8 @@ class PhotoUpdateView(LoginRequiredMixin, UpdateView):
     model = Photo
     fields = ['photo', 'text']
     template_name = 'photo/update.html'
+
+class PhotoDetailView(LoginRequiredMixin, DetailView):
+    model = Photo
+    template_name = 'photo/detail.html'
+
