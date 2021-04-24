@@ -1,8 +1,8 @@
 from django.urls import path
-from django.views.generic.detail import DetailView
+# from django.views.generic.detail import DetailView
 from .views import *
 # from . import views
-from .models import Photo
+# from .models import Photo
 # from .views import PhotoList, PhotoDeleteView, PhotoUpdateView, PhotoUploadView
 
 app_name = 'photo'

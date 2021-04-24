@@ -1,17 +1,13 @@
 from django.shortcuts import render, redirect
 from .models import Photo
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
-from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 # from django.views import generic
 
-
-
-
-# @login_required
 class PhotoList(LoginRequiredMixin, ListView):
     model = Photo
     template_name = 'photo/list.html'

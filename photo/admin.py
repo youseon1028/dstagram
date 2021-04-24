@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Photo
+from .models import Photo, User
 
 class PhotoAdmin(admin.ModelAdmin):
     list_display = ['id', 'author', 'created', 'updated']
@@ -9,3 +9,4 @@ class PhotoAdmin(admin.ModelAdmin):
     ordering = ['-updated', '-created']
 
 admin.site.register(Photo, PhotoAdmin)
+admin.site.register(User)
