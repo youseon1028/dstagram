@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser
 from django.urls import reverse
 
 
+
 GENDER_C = (
     ("선택안함", "선택안함"),
     ('여성', '여성'),

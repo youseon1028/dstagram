@@ -1,4 +1,4 @@
-#from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 from photo.models import User # 새로운 필드 추가한 User 사용
 from django import forms
 
@@ -10,8 +10,9 @@ class RegisterForm(forms.ModelForm):
         model = User
         fields = ['username', 'first_name', 'last_name', 'email', 'gender', 'birthdate']
 
-    def clean_password2(self):
-        cd = self.cleaned_data
-        if cd['password'] != cd['password2']:
-            raise forms.ValidationError('Passwords not matched!')
-        return cd['password2']
+        def clean_password2(self):
+
+            cd = self.cleaned_data
+            if cd['password'] != cd['password2']:
+                raise forms.ValidationError('Passwords not matched!')
+            return cd['password2']
